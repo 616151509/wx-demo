@@ -1,0 +1,84 @@
+<<<<<<< HEAD
+<view class="page">
+=======
+<import src="/template/list.wxml"/>
+<view class="page">
+  <!-- 搜索 -->
+>>>>>>> first
+    <view class="weui-search-bar" id="searchBar" >
+      <view class="weui-search-bar__form">
+        <view class="weui-search-bar__box" bindtap="search">
+          <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+          <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping"
+          />
+        </view>
+      </view>
+    </view>
+<<<<<<< HEAD
+    <swiper class="section" indicator-dots="true" circular="true" indicator-active-color="#fff" autoplay="true" interval="4000" duration="500">
+      <block wx:for="{{slides}}" wx:key="{{id}}">
+        <swiper-item>
+          <image src="{{item.image}}" />
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class='nav' wx:for="{{navList}}" wx:key="index">
+      <navigator url="{{item.url}}" class="navParts">
+        <image src='{{item.image}}'></image>
+        <text>{{item.title}}</text>
+      </navigator>
+    </view>
+=======
+    <!-- 轮播 -->
+    <swiper class="section" indicator-dots="true" circular="true" indicator-active-color="#fff" autoplay="true" interval="4000" duration="500">
+      <block wx:for="{{slides}}" wx:key="{{id}}">
+        <swiper-item>
+          <image src="{{item.slide_url}}" />
+        </swiper-item>
+      </block>
+    </swiper>
+    <!-- 导航 -->
+    <view class='nav' wx:for="{{navList}}" wx:key="index">
+      <view class="navParts">
+        <image src='{{item.nav_img}}'></image>
+        <text>{{item.nav_title}}</text>
+      </view>
+    </view>
+    <!-- 商品活动块 -->
+	<view class="section activity">
+		<view class="activity up">
+			<view class="left-list">
+				<image src="{{index_activity[0].img_url}}" data-id="{{index_activity[0].id}}" />
+			</view>
+			<view class="right-list">
+				<image src="{{index_activity[1].img_url}}" data-id="{{index_activity[1].id}}" mode="aspectFill" />
+				<image src="{{index_activity[2].img_url}}" data-id="{{index_activity[2].id}}" mode="aspectFill" />
+			</view>
+		</view>
+		<view class="activity down"></view>
+	</view>
+  	<!-- 首页商品版块 -->
+	<view class="section block">
+		<block wx:for="{{index_block}}" wx:key="{{item.id}}">
+			<view class="section cover">
+				<image class="cover-img" src="{{item.img_url}}" data-cid="{{item.id}}" bindtap="showcDetail"/>
+			</view>
+			<view class="section goods-list">
+				<block wx:for="{{item.section}}" wx:key="index" wx:for-item="product">
+					<view class="goods-item">
+						<image class="goods-img {{product.is_new?'new':''}} {{product.on_sale?'on-sale':''}}" src="{{product.goods_cover}}" data-pid="{{product.id}}" mode="aspectFill" bindtap="showDetail"/>
+						<text class="title">{{product.header}}</text>
+						<text class="desp">{{product.description}}</text>
+						<text class="meta">{{product.meta}}</text>
+						<text class="discount">{{product.discount}}</text>
+					</view>
+				</block>
+			</view>
+		</block>
+	</view>
+  <!-- 底部 -->
+  <view class="section bottom-line">
+		<text>到底啦</text>
+	</view>
+>>>>>>> first
+</view>
